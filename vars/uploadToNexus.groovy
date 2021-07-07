@@ -1,4 +1,4 @@
-def call(nexusRepo)                   
+def call(nexusRepo){               
     def pom = readMavenPom file: 'pom.xml'
     def repo = nexusRepo
     def artifactId = pom.artifactId
@@ -11,3 +11,4 @@ def call(nexusRepo)
             protocol: 'http', 
             repository: repo, 
             version: pom.version
+}
