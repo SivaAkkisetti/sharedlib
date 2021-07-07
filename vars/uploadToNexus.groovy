@@ -1,6 +1,7 @@
 def call(nexusRepo){               
     def pom = readMavenPom file: 'pom.xml'
-    def repo = nexusRepo
+    def repo = pom.version.endsWith("SNAPSHOT") ? "my-app2-snapshot" : "my-app2-release"
+    //def repo = nexusRepo
     def artifactId = pom.artifactId
     def groupId = pom.groupId
     nexusArtifactUploader artifacts: [[artifactId: artifactId, classifier: '', file: "target/${artifactId}-${pom.version}.war", type: 'war']], 
