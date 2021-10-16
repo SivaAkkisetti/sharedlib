@@ -6,7 +6,7 @@ def call(nexusRepo){
     nexusArtifactUploader artifacts: [[artifactId: artifactId, classifier: '', file: "target/${artifactId}-${pom.version}.war", type: 'war']], 
             credentialsId: 'nexus3', 
             groupId: groupId, 
-            nexusUrl: '172.31.46.46:8081', 
+            nexusUrl: '172.31.15.134:8081', 
             nexusVersion: 'nexus3', 
             protocol: 'http', 
             repository: repo, 
